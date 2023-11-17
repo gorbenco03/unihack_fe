@@ -1,6 +1,6 @@
 import React from 'react';
 import { Column, Container } from '../../components/grid';
-import Header from '../header/header.section';
+import { Header } from '../header/header.section';
 
 function Hero() {
   return (

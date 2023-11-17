@@ -6,7 +6,7 @@ import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import Dropdown from '../components/dropdown/dropdown.component';
 import { Button } from '../components/button/button.component';
 import Faqs from '../sections/faqs/faqs.section';
-import Header from '../sections/header/header.section';
+import { Header } from '../sections/header/header.section';
 export function About() {
   return (
     <>
