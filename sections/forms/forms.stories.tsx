@@ -1,8 +1,8 @@
 import { Meta, Story } from '@storybook/react';
-import Forms from './forms.section';
+import Hero from './hero.section';
 
 export default {
   title: 'Forms page section',
 } as Meta;
 
-export const FormsSection: Story = () => <Forms />;
+export const FormsSection: Story = () => <Hero />;

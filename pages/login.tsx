@@ -1,5 +1,5 @@
 import Footer from '../sections/footer/footer.section';
-import { Header } from '../sections/header/header.section';
+import Header from '../sections/header/header.section';
 import Link from 'next/link';
 
 export default function Example() {
