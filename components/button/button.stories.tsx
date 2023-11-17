@@ -5,7 +5,7 @@ export default {
   title: 'Components / Button',
   component: Component,
   args: {
-    label: 'Vezi toate profesiile',
+    label: '',
   },
 } as Meta;
 
@@ -26,7 +26,7 @@ export const Button: Story<StoryArgs> = ({ label, ...rest }) => (
       <label>Link</label>
       <br />
       <Component {...rest}>
-        <a href="https://code4.md" target="_blank" rel="noopener noreferrer">
+        <a target="_blank" rel="noopener noreferrer">
           {label}
         </a>
       </Component>
