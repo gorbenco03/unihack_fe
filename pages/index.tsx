@@ -5,6 +5,7 @@ import Footer from '../sections/footer/footer.section';
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import Dropdown from '../components/dropdown/dropdown.component';
 import { Button } from '../components/button/button.component';
+import Faqs from '../sections/faqs/faqs.section';
 export function About() {
   return (
     <>
@@ -55,7 +56,8 @@ export function About() {
       </div>
 
       <Stats />
-      <Footer></Footer>
+      <Faqs />
+      <Footer />
     </>
   );
 }
