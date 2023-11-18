@@ -13,7 +13,7 @@ import {
   PlusIcon,
   Squares2X2Icon,
 } from '@heroicons/react/20/solid';
-import { DoctorCard } from '../components/doctorCard/index.';
+import { IDoctor } from './doctor/[id]';
 
 const sortOptions = [
   { name: 'Most Popular', href: '#', current: true },
@@ -71,7 +71,18 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
-export default function Doctors() {
+export async function getServerSideProps() {
+  const res = await fetch('http://localhost:3002/doctors');
+  const doctors = await res.json();
+
+  return {
+    props: {
+      doctors,
+    },
+  };
+}
+
+export default function Doctors({ doctors }: { doctors: IDoctor[] }) {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
   return (
@@ -353,7 +364,7 @@ export default function Doctors() {
 
               {/* Product grid */}
               <div className="lg:col-span-3">
-                <Card></Card>
+                <Card people={doctors} />
                 <Pagination></Pagination>
               </div>
             </div>

@@ -6,6 +6,7 @@ import Hero from '../../sections/forms/hero.section';
 import { BookingForm } from '../../components/booking/bookingForm.component';
 import Image from 'next/image';
 import clsx from 'clsx';
+import { useRouter } from 'next/router';
 
 const product = {
   name: 'Doctor01',
@@ -79,6 +80,34 @@ const relatedProducts = [
   },
   // More products...
 ];
+export interface IDoctor {
+  email: string;
+  username: string;
+  phone: string;
+  doctorType: string;
+  id: string;
+}
+
+// export async function getStaticPaths() {
+//   const docts = await fetch('http://localhost:3002/doctors');
+//   const data: [
+//     {
+//       email: string;
+//       username: string;
+//       phone: string;
+//       doctorType: string;
+//       id: string;
+//     }
+//   ] = await docts.json();
+//   const paths = data.map((post) => ({
+//     params: { id: post.id },
+//   }));
+
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// }
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
@@ -87,6 +116,14 @@ function classNames(...classes: string[]) {
 export default function Doctor() {
   const [open, setOpen] = useState(false);
   const [showForm, setShowForm] = useState(false);
+  const [post, setPost] = useState(false);
+  const router = useRouter();
+  console.log(router.query.id);
+
+  // if (!param) {
+  //   const res = fetch(`localhost:3002/doctor/${param}`).then((res) => res);
+  //   setPost(res.json());
+  // }
 
   return (
     <>
