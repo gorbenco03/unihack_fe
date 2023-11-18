@@ -1,7 +1,8 @@
 import React from 'react';
 import { Column, Container } from '../../components/grid';
 import { Header } from '../header/header.section';
-
+import Dropdown from '../../components/dropdown/dropdown.component';
+import Link from 'next/link';
 function Hero() {
   return (
     <div>
@@ -38,18 +39,20 @@ function Hero() {
               fugiat aliqua.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <a
-                href="#"
-                className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
-                Get started
-              </a>
-              <a
-                href="#"
-                className="text-sm font-semibold leading-6 text-gray-900"
-              >
-                Learn more <span aria-hidden="true">→</span>
-              </a>
+              <div className="flex flex-col sm:flex-row justify-between w-[500px]">
+                <Dropdown slug="Doctor" data={['medik', 'pedik']} />
+                <Dropdown slug="Orasul" data={['huisasi', 'chisinau']} />
+                <Dropdown
+                  slug="Domeniul"
+                  data={['chirurgie', 'dermatologie']}
+                />
+                <Link
+                  href="/doctors"
+                  className="rounded-md bg-indigo-600 px-3 py-[7px] text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                >
+                  Cauta
+                </Link>
+              </div>
             </div>
           </div>
         </div>
