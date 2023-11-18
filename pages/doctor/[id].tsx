@@ -3,6 +3,9 @@ import { Tab } from '@headlessui/react';
 import { StarIcon } from '@heroicons/react/20/solid';
 import { Header } from '../../sections/header/header.section';
 import Hero from '../../sections/forms/hero.section';
+import { BookingForm } from '../../components/booking/bookingForm.component';
+import Image from 'next/image';
+
 const product = {
   name: 'Johnny Sins',
   version: {
@@ -21,6 +24,7 @@ const product = {
   imageAlt:
     'Sample of 30 icons with friendly and fun details in outline, filled, and brand color styles.',
 };
+
 const reviews = {
   average: 4,
   featured: [
@@ -86,6 +90,7 @@ function classNames(...classes: string[]) {
 
 export default function Doctor() {
   const [open, setOpen] = useState(false);
+  const [showForm, setShowForm] = useState(false);
 
   return (
     <>
@@ -96,7 +101,7 @@ export default function Doctor() {
           <div className="lg:grid lg:grid-cols-7 lg:grid-rows-1 lg:gap-x-8 lg:gap-y-10 xl:gap-x-16">
             <div className="lg:col-span-4 lg:row-end-1">
               <div className="aspect-h-3 aspect-w-3 overflow-hidden rounded-lg bg-gray-100">
-                <img
+                <Image
                   src={product.imageSrc}
                   alt={product.imageAlt}
                   className="object-cover object-center"
@@ -156,10 +161,12 @@ export default function Doctor() {
               <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2">
                 <button
                   type="button"
-                  className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+                  onClick={() => setShowForm(!showForm)}
+                  className="mb-4 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500"
                 >
-                  {product.price}
+                  {showForm ? 'Ascunde Formularul' : 'Arată Formularul'}
                 </button>
+                {showForm ? <BookingForm /> : null}
               </div>
             </div>
 
@@ -203,7 +210,7 @@ export default function Doctor() {
                         className="flex space-x-4 text-sm text-gray-500"
                       >
                         <div className="flex-none py-10">
-                          <img
+                          <Image
                             src={review.avatarSrc}
                             alt=""
                             className="h-10 w-10 rounded-full bg-gray-100"
@@ -290,7 +297,7 @@ export default function Doctor() {
               {relatedProducts.map((product) => (
                 <div key={product.id} className="group relative">
                   <div className="aspect-h-3 aspect-w-4 overflow-hidden rounded-lg bg-gray-100">
-                    <img
+                    <Image
                       src={product.imageSrc}
                       alt={product.imageAlt}
                       className="object-cover object-center"

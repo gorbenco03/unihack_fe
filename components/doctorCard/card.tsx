@@ -1,4 +1,5 @@
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/20/solid';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const people = [
@@ -91,7 +92,7 @@ export function Card() {
           {' '}
           <Link href={'/doctor/DoctorHouse'}>
             <div className="flex flex-1 flex-col p-8">
-              <img
+              <Image
                 className="mx-auto h-32 w-32 flex-shrink-0 rounded-full"
                 src={person.imageUrl}
                 alt=""
