@@ -7,7 +7,7 @@ import Image from 'next/image';
 const navigation = [
   { name: 'Product', href: '#' },
   { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
+  { name: 'Asistenta Virtuala', href: '/chatbot' },
   { name: 'Company', href: '#' },
 ];
 

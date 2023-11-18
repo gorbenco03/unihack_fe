@@ -31,8 +31,8 @@ function Hero() {
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <div className="flex flex-col sm:flex-row gap-y-4 sm:gap-y-0 justify-between w-[500px]">
-                <Dropdown slug="Doctor" data={['medik', 'pedik']} />
-                <Dropdown slug="Orasul" data={['huisasi', 'chisinau']} />
+                <Dropdown slug="Doctor" data={['dermatolog', 'pediatru']} />
+                <Dropdown slug="Orasul" data={['timisoara', 'chisinau']} />
                 <Dropdown
                   slug="Domeniul"
                   data={['chirurgie', 'dermatologie']}
