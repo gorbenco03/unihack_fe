@@ -1,7 +1,11 @@
 import { Fragment, useState } from 'react';
 import Link from 'next/link';
+import { Header } from '../sections/header/header.section';
 import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
+import { Card } from '../components/doctorCard/card';
+import { Footer } from '../sections/footer/footer.section';
+import Pagination from '../components/pagination/pagination.component';
 import {
   ChevronDownIcon,
   FunnelIcon,
@@ -72,6 +76,7 @@ export default function Doctors() {
 
   return (
     <div className="bg-white">
+      <Header></Header>
       <div>
         {/* Mobile filter dialog */}
         <Transition.Root show={mobileFiltersOpen} as={Fragment}>
@@ -348,13 +353,13 @@ export default function Doctors() {
 
               {/* Product grid */}
               <div className="lg:col-span-3">
-                <Link href={'/doctor/DoctorHouse'}>
-                  <DoctorCard />
-                </Link>
+                <Card></Card>
+                <Pagination></Pagination>
               </div>
             </div>
           </section>
         </main>
+        <Footer></Footer>
       </div>
     </div>
   );
