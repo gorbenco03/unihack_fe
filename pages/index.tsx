@@ -11,7 +11,6 @@ export function About() {
       <Hero />
       <Stats />
       <Faqs />
-      <Footer />
     </>
   );
 }

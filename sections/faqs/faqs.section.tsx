@@ -3,10 +3,35 @@ import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/react/24/outline';
 
 const faqs = [
   {
-    question: "What's the best thing about Switzerland?",
+    question: 'Cine suntem noi?',
     answer:
-      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+      'Noi conectam pacientii cu specialistii in domeniu si oferim o experienta mai buna in procesul de gasire a unui specialist.',
   },
+  {
+    question: 'Cine sunt clientii nostri?',
+    answer:
+      'Medici, terapeuti(masaj, acupunctura, etc...), laboratoarele de analize',
+  },
+  {
+    question: 'Revenue model',
+    answer: 'Plata anuala pentru a aparea pe platforma',
+  },
+  {
+    question: 'Veridicitatea serviciului',
+    answer:
+      'Planificam sa verificam minutios experienta fiecarei entitati care se inregistreaza pe platforma',
+  },
+  {
+    question: 'Pentru pacienti',
+    answer:
+      'Pacientii care vor avea o metoda usoara de a programa o intalnire la specialist iar in cazul in care au o simptoma pot intreba usor asistentul nostru AI pentru a afla posibilii medici la care trebuie sa plece. Plata se face in Crypto, card sau cash',
+  },
+  {
+    question: 'Pentru specialisti',
+    answer:
+      'Ei vor avea o metoda buna de promovare si un cabinet personal cu calendar si statistici despre pacientii lor.',
+  },
+
   // More questions...
 ];
 
