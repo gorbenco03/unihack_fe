@@ -21,15 +21,19 @@ function Hero() {
         </div>
         <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
           <div className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-              Data to enrich your online business
+            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+              Caută medicul care ți-se potrivește
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-              lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-              fugiat aliqua.
+              Spune-ne simptomele la AI și îți spunem medicul potrivit{'  '}
+              <Link href="/chatbot">
+                <span className="text-2xl font-bold underline">AICI</span>
+              </Link>
             </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
+            <p className="text-lg leading-8 text-gray-600">
+              sau selecteaza direct
+            </p>
+            <div className="mt-6 flex items-center justify-center gap-x-6">
               <div className="flex flex-col sm:flex-row gap-y-4 sm:gap-y-0 justify-between w-[500px]">
                 <Dropdown slug="Doctor" data={['dermatolog', 'pediatru']} />
                 <Dropdown slug="Orasul" data={['timisoara', 'chisinau']} />
