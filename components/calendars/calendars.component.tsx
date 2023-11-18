@@ -1,7 +1,8 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid';
 import { Menu, Transition } from '@headlessui/react';
 import { EllipsisVerticalIcon } from '@heroicons/react/24/outline';
+import { Payment } from '../payment/payment.component';
 
 const days = [
   { date: '2021-12-27' },
@@ -58,7 +59,6 @@ const meetings = [
     end: '2:30 PM',
     endDatetime: '2022-01-21T14:30',
   },
-  // More meetings...
 ];
 
 function classNames(...classes: (string | boolean | undefined)[]) {
@@ -66,8 +66,13 @@ function classNames(...classes: (string | boolean | undefined)[]) {
 }
 
 export function Calendar() {
+  const [showPayment, setShowPayment] = useState(false);
+
+  if (showPayment) {
+    return <Payment />;
+  }
   return (
-    <div className="md:grid md:grid-cols-2 md:divide-x md:divide-gray-200">
+    <div className="md:grid w-200 z-20 px-16 py-16 rounded-lg  md:grid-cols-2 md:divide-x md:divide-gray-200">
       <div className="md:pr-14">
         <div className="flex items-center">
           <h2 className="flex-auto text-sm font-semibold text-gray-900">
@@ -126,7 +131,9 @@ export function Calendar() {
                   'mx-auto flex h-8 w-8 items-center justify-center rounded-full'
                 )}
               >
-                {/* <time dateTime={day.date}>{day.date.split('-').pop().replace(/^0/, '')}</time> */}
+                <time dateTime={day.date}>
+                  {day.date.split('-').pop().replace(/^0/, '')}
+                </time>
               </button>
             </div>
           ))}
@@ -216,6 +223,95 @@ export function Calendar() {
             </li>
           ))}
         </ol>
+        <ol className="mt-4 space-y-1 text-sm leading-6 text-gray-500">
+          {meetings.map((meeting) => (
+            <li
+              key={meeting.id}
+              className="group flex items-center space-x-4 rounded-xl px-4 py-2 focus-within:bg-gray-100 hover:bg-gray-100"
+            >
+              <img
+                src={meeting.imageUrl}
+                alt=""
+                className="h-10 w-10 flex-none rounded-full"
+              />
+              <div className="flex-auto">
+                <p className="text-gray-900">{meeting.name}</p>
+                <p className="mt-0.5">
+                  <time dateTime={meeting.startDatetime}>{meeting.start}</time>{' '}
+                  - <time dateTime={meeting.endDatetime}>{meeting.end}</time>
+                </p>
+              </div>
+              <Menu
+                as="div"
+                className="relative opacity-0 focus-within:opacity-100 group-hover:opacity-100"
+              >
+                <div>
+                  <Menu.Button className="-m-2 flex items-center rounded-full p-1.5 text-gray-500 hover:text-gray-600">
+                    <span className="sr-only">Open options</span>
+                    <EllipsisVerticalIcon
+                      className="h-6 w-6"
+                      aria-hidden="true"
+                    />
+                  </Menu.Button>
+                </div>
+
+                <Transition
+                  as={Fragment}
+                  enter="transition ease-out duration-100"
+                  enterFrom="transform opacity-0 scale-95"
+                  enterTo="transform opacity-100 scale-100"
+                  leave="transition ease-in duration-75"
+                  leaveFrom="transform opacity-100 scale-100"
+                  leaveTo="transform opacity-0 scale-95"
+                >
+                  <Menu.Items className="absolute right-0 z-10 mt-2 w-36 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <div className="py-1">
+                      <Menu.Item>
+                        {({ active }) => (
+                          <a
+                            href="#"
+                            className={classNames(
+                              active
+                                ? 'bg-gray-100 text-gray-900'
+                                : 'text-gray-700',
+                              'block px-4 py-2 text-sm'
+                            )}
+                          >
+                            Edit
+                          </a>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <a
+                            href="#"
+                            className={classNames(
+                              active
+                                ? 'bg-gray-100 text-gray-900'
+                                : 'text-gray-700',
+                              'block px-4 py-2 text-sm'
+                            )}
+                          >
+                            Cancel
+                          </a>
+                        )}
+                      </Menu.Item>
+                    </div>
+                  </Menu.Items>
+                </Transition>
+              </Menu>
+            </li>
+          ))}
+        </ol>
+        <div className="mt-4  mb-4 flex items-center justify-center gap-x-6">
+          <button
+            type="button"
+            onClick={() => setShowPayment(true)}
+            className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          >
+            Go to payment
+          </button>
+        </div>
       </section>
     </div>
   );

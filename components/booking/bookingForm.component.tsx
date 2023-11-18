@@ -1,6 +1,12 @@
 import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid';
 import { Calendar } from '../calendars/calendars.component';
+import { useState } from 'react';
 export function BookingForm() {
+  const [showCalendar, setShowCalendar] = useState(false);
+
+  if (showCalendar) {
+    return <Calendar />;
+  }
   return (
     <form>
       <div className="space-y-20 mt-20  z-30">
@@ -92,7 +98,8 @@ export function BookingForm() {
       </div>
       <div className="mt-2 mb-4 flex items-center justify-end gap-x-6">
         <button
-          type="submit"
+          type="button"
+          onClick={() => setShowCalendar(true)}
           className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         >
           Next

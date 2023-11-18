@@ -207,7 +207,7 @@ export default function Doctor() {
                   onClick={() => setShowForm(!showForm)}
                   className="mb-4 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500"
                 >
-                  {showForm ? 'Ascunde Formularul' : 'Arată Formularul'}
+                  Programează-te
                 </button>
               </div>
             </div>
