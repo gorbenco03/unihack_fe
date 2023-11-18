@@ -2,6 +2,7 @@ import { Fragment, useState } from 'react';
 
 import { Header } from '../sections/header/header.section';
 import { Footer } from '../sections/footer/footer.section';
+import Hero from '../sections/forms/hero.section';
 
 export default function Chatbot() {
   const [comment, setComment] = useState('');
@@ -26,11 +27,12 @@ export default function Chatbot() {
   return (
     <>
       <Header></Header>
-      <div className="w-full m-10 p-10 flex items-center justify-center ">
+      <Hero></Hero>
+      <div className="w-full mt-10 p-10 flex items-center justify-center ">
         <div className="bg-white shadow-lg  rounded-lg max-w-md">
           <div className="border-b-2 px-2 py-4">
             <div className="inline-flex items-center">
-              <span className="ml-8">Asistenta Virtuala</span>
+              <h2 className="ml-8">Asistenta Virtuala</h2>
             </div>
           </div>
           <div className="h-80 flex flex-col space-y-4 max-w-md px-2 mb-2 mt-2 ">
@@ -81,6 +83,7 @@ export default function Chatbot() {
           </div>
         </div>
       </div>
+
       <Footer />
     </>
   );
