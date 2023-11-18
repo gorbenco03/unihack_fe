@@ -9,19 +9,18 @@ export default function Chatbot() {
   const [isLoading, setIsLoading] = useState(false);
   const apiUrl = 'https://fastapi-chatbov.onrender.com/ask?question=';
 
-  const callAPI = async () => {
-    try {
-      const res = await fetch(`${apiUrl}${comment}`, {
-        method: 'POST',
-        headers: {
-          AccessControlAllowOrigin: '*',
-        },
+  const callAPI = () => {
+    const res = fetch(`${apiUrl}${comment}`, {
+      headers: {},
+    })
+      .then((res) => {
+        res.json().then((r) => {
+          console.log(r);
+        });
+      })
+      .catch((e) => {
+        console.log(e);
       });
-      const data = await res.json();
-      console.log(data);
-    } catch (err) {
-      console.log(err);
-    }
   };
   return (
     <>
@@ -67,7 +66,11 @@ export default function Chatbot() {
                   <div className="flex flex-col items-end pt-2">
                     <div>
                       <button
-                        onClick={callAPI}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          console.log(comment);
+                          if (comment) callAPI();
+                        }}
                         type="submit"
                         className="inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                       >
