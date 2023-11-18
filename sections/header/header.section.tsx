@@ -2,13 +2,11 @@ import { useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
-import Image from 'next/image';
 
 const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
+  { name: 'Home', href: '/' },
+  { name: 'Doctors', href: '/doctors' },
   { name: 'Asistenta Virtuala', href: '/chatbot' },
-  { name: 'Company', href: '#' },
 ];
 
 export function Header() {
@@ -21,16 +19,7 @@ export function Header() {
           className="flex items-center justify-between p-6 lg:px-8"
           aria-label="Global"
         >
-          <div className="flex lg:flex-1">
-            <Link href="/" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
-              <img
-                className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                alt=""
-              />
-            </Link>
-          </div>
+          <div className="flex lg:flex-1"></div>
           <div className="flex lg:hidden">
             <button
               type="button"
