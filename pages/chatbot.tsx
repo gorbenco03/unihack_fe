@@ -2,6 +2,7 @@ import { Fragment, useState } from 'react';
 
 import { Header } from '../sections/header/header.section';
 import { Footer } from '../sections/footer/footer.section';
+import { Discuss } from 'react-loader-spinner';
 
 export default function Chatbot() {
   const [comment, setComment] = useState('');
@@ -15,7 +16,9 @@ export default function Chatbot() {
     })
       .then((res) => {
         res.json().then((r) => {
-          console.log(r);
+          setIsLoading(false);
+          setComment('');
+          setRec(r[0]);
         });
       })
       .catch((e) => {
@@ -35,11 +38,25 @@ export default function Chatbot() {
           <div className="h-80 flex flex-col space-y-4 max-w-md px-2 mb-2 mt-2 ">
             <div className="flex flex-col items-start">
               <span className="bg-blue-500 px-2 py-4 rounded-b-xl mt-2 mb-2 rounded-tl-xl">
-                How I Can Help? Describe your problem in 15-20 words to be able
-                to recommend you a specialist
+                Salut! Cum te pot ajuta? Descrie problema ta in 15-30 cuvinte
+                pentru a primi o recomandare.
               </span>
             </div>
-            <span>{recommendation && recommendation}</span>
+            {isLoading ? (
+              <Discuss
+                visible={true}
+                height="40"
+                width="40"
+                ariaLabel="comment-loading"
+                wrapperStyle={{
+                  backgroundColor: 'white',
+                  color: '#fff',
+                }}
+                wrapperClass="comment-wrapper"
+              />
+            ) : (
+              <span>{recommendation}</span>
+            )}
           </div>
           <div className="border-t-4  py-4 px-4">
             <div className="flex items-start space-x-4">
@@ -68,6 +85,7 @@ export default function Chatbot() {
                       <button
                         onClick={(e) => {
                           e.preventDefault();
+                          setIsLoading(true);
                           console.log(comment);
                           if (comment) callAPI();
                         }}
