@@ -101,7 +101,7 @@ export default function Doctor() {
           <div className="lg:grid lg:grid-cols-7 lg:grid-rows-1 lg:gap-x-8 lg:gap-y-10 xl:gap-x-16">
             <div className="lg:col-span-4 lg:row-end-1">
               <div className="aspect-h-3 aspect-w-3 overflow-hidden rounded-lg bg-gray-100">
-                <Image
+                <img
                   src={product.imageSrc}
                   alt={product.imageAlt}
                   className="object-cover object-center"

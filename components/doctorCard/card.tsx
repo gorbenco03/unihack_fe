@@ -96,6 +96,8 @@ export function Card() {
                 className="mx-auto h-32 w-32 flex-shrink-0 rounded-full"
                 src={person.imageUrl}
                 alt=""
+                width={128}
+                height={128}
               />
               <h3 className="mt-6 text-sm font-medium text-gray-900">
                 {person.name}
