@@ -159,7 +159,7 @@ export default function Doctor() {
                   </h1>
 
                   <h2 id="information-heading" className="sr-only">
-                    Product information
+                    Product information:
                   </h2>
                   <p className="mt-2 text-sm text-gray-500">
                     {product.version.name}{' '}
