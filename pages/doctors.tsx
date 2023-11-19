@@ -13,7 +13,8 @@ import {
   PlusIcon,
   Squares2X2Icon,
 } from '@heroicons/react/20/solid';
-import { IDoctor } from './doctor/[id]';
+import { IDoctor } from './doctors/[id]';
+import { useRouter } from 'next/router';
 
 const sortOptions = [
   { name: 'Most Popular', href: '#', current: true },
@@ -84,6 +85,8 @@ export async function getServerSideProps() {
 
 export default function Doctors({ doctors }: { doctors: IDoctor[] }) {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+  const router = useRouter();
+  console.log(router);
 
   return (
     <div className="bg-white">

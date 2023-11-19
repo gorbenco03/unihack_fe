@@ -1,7 +1,7 @@
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/20/solid';
 import Image from 'next/image';
 import Link from 'next/link';
-import { IDoctor } from '../../pages/doctor/[id]';
+import { IDoctor } from '../../pages/doctors/[id]';
 
 const people = [
   {
@@ -91,7 +91,7 @@ export function Card({ people }: { people: IDoctor[] }) {
           className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow"
         >
           {' '}
-          <Link href={`/doctor/${person.id}`}>
+          <Link href={`/doctors/${person.id}`}>
             <div className="flex flex-1 flex-col p-8">
               <Image
                 className="mx-auto h-32 w-32 flex-shrink-0 rounded-full"
