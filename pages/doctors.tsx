@@ -72,7 +72,7 @@ function classNames(...classes: string[]) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch('http://localhost:3002/doctors');
+  const res = await fetch('http://174.138.68.41/doctors');
   const doctors = await res.json();
 
   return {
