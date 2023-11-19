@@ -1,8 +1,4 @@
-const stats = [
-  { label: 'Transactions every 24 hours', value: '44 million' },
-  { label: 'Assets under holding', value: '$119 trillion' },
-  { label: 'New users annually', value: '46,000' },
-];
+const stats = [{ label: 'Medici în România', value: '65 mii' }];
 
 export default function Example() {
   return (
@@ -15,18 +11,17 @@ export default function Example() {
           <div className="mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row">
             <div className="lg:w-full lg:max-w-2xl lg:flex-auto">
               <p className="text-xl leading-8 text-gray-600">
-                Aliquet nec orci mattis amet quisque ullamcorper neque, nibh
-                sem. At arcu, sit dui mi, nibh dui, diam eget aliquam. Quisque
-                id at vitae feugiat egestas ac. Diam nulla orci at in viverra
-                scelerisque eget. Eleifend egestas fringilla sapien.
+                Noi conectam toti medicii, specialistii medicali si
+                laboratoarele de analiye care lucreaza in clinici mici sau
+                individuale cu potentialii pacienti.
               </p>
               <p className="mt-10 max-w-xl text-base leading-7 text-gray-700">
-                Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget
-                risus enim. Mattis mauris semper sed amet vitae sed turpis id.
-                Id dolor praesent donec est. Odio penatibus risus viverra tellus
-                varius sit neque erat velit. Faucibus commodo massa rhoncus,
-                volutpat. Dignissim sed eget risus enim. Mattis mauris semper
-                sed amet vitae sed turpis id.
+                Specialistii individuali din medicina intalnesc o problema in
+                procesul de a se face cunoscuti. Platforma noastra va ofera o
+                forma usoara de a gasi pacienti si de a va promova online, avand
+                un cabinet personal cu statistici, calendar de programari si
+                alte ustensile pentru a va ajuta sa va concentrati pe sanatatea
+                pacientilor.
               </p>
             </div>
             <div className="lg:flex lg:flex-auto lg:justify-center">

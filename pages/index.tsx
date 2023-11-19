@@ -13,7 +13,6 @@ export function About() {
       <Drpdwontxt />
       <Stats />
       <Faqs />
-      <Footer />
     </>
   );
 }

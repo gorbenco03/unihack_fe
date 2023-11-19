@@ -2,7 +2,6 @@ import { Fragment, useState } from 'react';
 import { Tab } from '@headlessui/react';
 import { StarIcon } from '@heroicons/react/20/solid';
 import { Header } from '../../sections/header/header.section';
-import Hero from '../../sections/forms/hero.section';
 import { BookingForm } from '../../components/booking/bookingForm.component';
 import Image from 'next/image';
 import clsx from 'clsx';
