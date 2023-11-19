@@ -149,12 +149,12 @@ export default function Example() {
 
           <p className="mt-10 text-center text-sm text-gray-500">
             Not a member?{' '}
-            <a
-              href="#"
+            <Link
+              href="dashboard"
               className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
             >
               REGISTER NOW
-            </a>
+            </Link>
           </p>
         </div>
       </div>
