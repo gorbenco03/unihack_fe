@@ -1,3 +1,4 @@
+import { CardStats } from '../card/cardFooter.component';
 const stats = [{ label: 'Medici în România', value: '65 mii' }];
 
 export default function Example() {
@@ -42,6 +43,7 @@ export default function Example() {
               </dl>
             </div>
           </div>
+          <CardStats></CardStats>
         </div>
       </div>
     </div>

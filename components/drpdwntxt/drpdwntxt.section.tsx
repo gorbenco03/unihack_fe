@@ -16,10 +16,28 @@ export function Drpdwontxt() {
         </p>
         <p className="text-lg leading-8 text-gray-600">sau selecteaza direct</p>
         <div className="mt-6 flex items-center justify-center gap-x-6">
-          <div className="flex flex-col sm:flex-row gap-y-4 sm:gap-y-0 justify-between w-[500px]">
-            <Dropdown slug="Doctor" data={['dermatolog', 'pediatru']} />
-            <Dropdown slug="Orasul" data={['timisoara', 'chisinau']} />
-            <Dropdown slug="Domeniul" data={['chirurgie', 'dermatologie']} />
+          <div className="flex space-x-4 flex-col sm:flex-row gap-y-4 sm:gap-y-0 justify-between w-[500px]">
+            <Dropdown slug="Tip" data={['Doctor', 'Serviciu']} />
+            <Dropdown
+              slug="Orasul"
+              data={[
+                'Chisinau',
+                'Timisoara',
+                'Budapesta',
+                'Bucuresti',
+                'Paris',
+              ]}
+            />
+            <Dropdown
+              slug="Domeniul"
+              data={[
+                'Stomatolog',
+                'Pediatru',
+                'Cosmetolog',
+                'Neurolog',
+                'Chirurg',
+              ]}
+            />
             <Link
               href="/doctors"
               className="rounded-md bg-indigo-600 px-3 py-[7px] text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
