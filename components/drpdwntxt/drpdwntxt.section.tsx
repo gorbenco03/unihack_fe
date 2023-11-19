@@ -9,7 +9,8 @@ export function Drpdwontxt() {
           Caută medicul care ți-se potrivește
         </h1>
         <p className="mt-6 text-lg leading-8 text-gray-600">
-          Spune-ne simptomele la AI și îți spunem medicul potrivit{'  '}
+          Spune-ne simptomele la Asistenta Virtuală și găsește medicul potrivit
+          {'  '}
           <Link href="/chatbot">
             <span className="text-2xl font-bold underline">AICI</span>
           </Link>
