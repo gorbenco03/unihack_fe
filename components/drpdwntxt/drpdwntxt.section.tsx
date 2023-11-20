@@ -18,7 +18,11 @@ export function Drpdwontxt() {
         <p className="text-lg leading-8 text-gray-600">sau selecteaza direct</p>
         <div className="mt-6 flex items-center justify-center gap-x-6">
           <div className="flex space-x-4 flex-col sm:flex-row gap-y-4 sm:gap-y-0 justify-between w-[500px]">
-            <Dropdown slug="Tip" data={['Doctor', 'Serviciu']} />
+            <Dropdown
+              slug="Tip"
+              data={['Doctor', 'Serviciu']}
+              setData={setType}
+            />
             <Dropdown
               slug="Orasul"
               data={[
