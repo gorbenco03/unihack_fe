@@ -13,6 +13,14 @@ export function Drpdwontxt() {
         <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
           Caută medicul potrivit
         </h1>
+
+        <p className="mt-6 text-lg leading-8 text-gray-600">
+          Spune-ne simptomele la Asistenta Virtuală și găsește medicul potrivit
+          {'  '}
+          <Link href="/chatbot">
+            <span className="text-2xl font-bold underline">AICI</span>
+          </Link>
+        </p>
         <p className="mt-6 text-lg leading-8 text-gray-600"></p>
         <p className="text-lg leading-8 text-gray-600">sau selecteaza direct</p>
         <div className="mt-6 flex items-center justify-center gap-x-6">
