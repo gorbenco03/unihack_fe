@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Dispatch, Fragment, SetStateAction, useState } from 'react';
 import { Menu, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 
@@ -11,9 +11,11 @@ const options = ['Account settings', 'Support'];
 export default function Dropdown({
   slug,
   data,
+  setData,
 }: {
   slug: string;
   data: string[];
+  setData: Dispatch<SetStateAction<string>>;
 }) {
   const [slugName, setslugName] = useState(slug);
   return (
@@ -46,7 +48,10 @@ export default function Dropdown({
                     {({ active }) => (
                       <span
                         onClick={() => {
-                          if (active) setslugName(el);
+                          if (active) {
+                            setslugName(el);
+                            setData(el);
+                          }
                         }}
                         className={classNames(
                           active
