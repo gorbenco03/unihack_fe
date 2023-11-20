@@ -1,6 +1,4 @@
-
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 
 **Install dependencies**
 
@@ -20,25 +18,24 @@ npm run storybook
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Our backend**
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```
+https://github.com/Raduc4/unihack_be.git
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.tsx`.
+**Side tracks**
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+**_The best react app_**
+We have implemented our react app using the latest industry tools and tehnologies, creating a strong base for the further development of the product.
 
-## Learn More
+We have strong rules when it comes to code quality and standards, and we are using nextJS with Typescript for this project along with Storybook for component development and testing and Netlify for deployment.
+Our pre-commit hooks are making sure that the code is always linted, formatted and correct before pushing it to the repository.
 
-To learn more about Next.js, take a look at the following resources:
+**_The best startup ideea_**
+Our ideea is to create a platform where people will be able to find the best doctor or medical specialist from their area, based on their needs and preferences. We are also planning to implement a system where people can rate their doctors and leave reviews, so that other people can make a better decision when choosing their doctor. With this platform we are trying to make the process of finding a doctor easier and more efficient, and also to make the way of finding clients for doctors more easier and more efficient.
+We are planning to launch this platform in Romania, and then expand it to other countries. With the money won here we will develop our first MVP that is planned to be launched in 3 weeks.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**_The typescript app_**
+We are using typescript for this project because it is a strongly typed language that helps us write better code and avoid bugs. It also helps us write more readable code and makes the development process easier and more efficient. We focused this subtrack on our backend app.
+https://github.com/Raduc4/unihack_be

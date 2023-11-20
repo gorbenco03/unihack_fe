@@ -1,25 +1,10 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useState, useEffect } from 'react';
 import { Tab } from '@headlessui/react';
 import { StarIcon } from '@heroicons/react/20/solid';
 import { Header } from '../../sections/header/header.section';
 import { BookingForm } from '../../components/booking/bookingForm.component';
 import Image from 'next/image';
 import clsx from 'clsx';
-import { useRouter } from 'next/router';
-
-const product = {
-  name: 'Doctor01',
-  version: {
-    name: 'Cardiolog',
-  },
-  price: 'Book a session',
-  description:
-    'Experienta 20 de ani in domeniul cardiologiei, absolent UMFT promotia 2002',
-  highlights: ['Rapid', 'Eficient', 'Ieftin'],
-  imageSrc: '',
-  imageAlt:
-    'Sample of 30 icons with friendly and fun details in outline, filled, and brand color styles.',
-};
 
 const reviews = {
   average: 4,
@@ -48,7 +33,6 @@ const reviews = {
       avatarSrc:
         'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80',
     },
-    // More reviews...
   ],
 };
 const faqs = [
@@ -62,7 +46,6 @@ const faqs = [
     answer:
       "Yes. The icons are drawn on a 24 x 24 pixel grid, but the icons can be scaled to different sizes as needed. We don't recommend going smaller than 20 x 20 or larger than 64 x 64 to retain legibility and visual balance.",
   },
-  // More FAQs...
 ];
 
 const relatedProducts = [
@@ -77,7 +60,6 @@ const relatedProducts = [
     imageAlt:
       'Payment application dashboard screenshot with transaction table, financial highlights, and main clients on colorful purple background.',
   },
-  // More products...
 ];
 export interface IDoctor {
   email: string;
@@ -87,42 +69,12 @@ export interface IDoctor {
   id: string;
 }
 
-// export async function getStaticPaths() {
-//   const docts = await fetch('http://localhost:3002/doctors');
-//   const data: [
-//     {
-//       email: string;
-//       username: string;
-//       phone: string;
-//       doctorType: string;
-//       id: string;
-//     }
-//   ] = await docts.json();
-//   const paths = data.map((post) => ({
-//     params: { id: post.id },
-//   }));
-
-//   return {
-//     paths,
-//     fallback: false,
-//   };
-// }
-
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
 export default function Doctor() {
-  const [open, setOpen] = useState(false);
   const [showForm, setShowForm] = useState(false);
-  const [post, setPost] = useState(false);
-  const router = useRouter();
-  console.log(router.query.id);
-
-  // if (!param) {
-  //   const res = fetch(`localhost:3002/doctor/${param}`).then((res) => res);
-  //   setPost(res.json());
-  // }
 
   return (
     <>
@@ -142,8 +94,10 @@ export default function Doctor() {
             <div className="lg:col-span-4 lg:row-end-1">
               <div className="aspect-h-3 aspect-w-3 overflow-hidden rounded-lg bg-gray-100">
                 <Image
-                  src={product.imageSrc}
-                  alt={product.imageAlt}
+                  src={
+                    'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=2070&auto=format&fit=crop'
+                  }
+                  alt={'Image of a doctor'}
                   className="object-cover object-center aspect-h-3 aspect-w-3"
                   width={200}
                   height={200}
@@ -155,14 +109,14 @@ export default function Doctor() {
               <div className="flex flex-col-reverse">
                 <div className="mt-4">
                   <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
-                    {product.name}
+                    {'Daniel Popescu'}
                   </h1>
 
                   <h2 id="information-heading" className="sr-only">
                     Product information:
                   </h2>
                   <p className="mt-2 text-sm text-gray-500">
-                    {product.version.name}{' '}
+                    {'Doctor House'}{' '}
                   </p>
                 </div>
 
@@ -186,18 +140,18 @@ export default function Doctor() {
                 </div>
               </div>
 
-              <p className="mt-6 text-gray-500">{product.description}</p>
+              <p className="mt-6 text-gray-500">{'A small description'}</p>
               <div className="mt-10 border-t border-gray-200 pt-10">
                 <h3 className="text-sm font-medium text-gray-900">
                   Highlights
                 </h3>
-                <div className="prose prose-sm mt-4 text-gray-500">
+                {/* <div className="prose prose-sm mt-4 text-gray-500">
                   <ul role="list">
                     {product.highlights.map((highlight) => (
                       <li key={highlight}>{highlight}</li>
                     ))}
                   </ul>
-                </div>
+                </div> */}
               </div>
 
               <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2">
@@ -294,7 +248,9 @@ export default function Doctor() {
 
                           <div
                             className="prose prose-sm mt-4 max-w-none text-gray-500"
-                            dangerouslySetInnerHTML={{ __html: review.content }}
+                            dangerouslySetInnerHTML={{
+                              __html: review.content,
+                            }}
                           />
                         </div>
                       </div>
