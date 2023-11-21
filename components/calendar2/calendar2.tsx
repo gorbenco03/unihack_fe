@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import {
   CalendarIcon,
   ChevronLeftIcon,
@@ -7,6 +7,8 @@ import {
   MapPinIcon,
 } from '@heroicons/react/20/solid';
 import { Menu, Transition } from '@headlessui/react';
+import DescriptionList from '../descriptionList/descriptionList.component';
+import Link from 'next/link';
 
 const meetings = [
   {
@@ -19,7 +21,16 @@ const meetings = [
       'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     location: 'Starbucks',
   },
-  // More meetings...
+  {
+    id: 2,
+    date: 'December 1th, 2023',
+    time: '7:00 PM',
+    datetime: '2023-12-01T19:00',
+    name: 'Gorbenco Chiril',
+    imageUrl:
+      'https://media.licdn.com/dms/image/D4D03AQFS-viX_ebCgQ/profile-displayphoto-shrink_800_800/0/1669152393898?e=2147483647&v=beta&t=D-cYrX94uzWiK2FAVX1XHS8R_UxW31_vRoWEPJYmT5A',
+    location: 'UBC0',
+  },
 ];
 const days = [
   { date: '2021-12-27' },
@@ -137,7 +148,7 @@ export function Calendar2() {
                     day.isSelected && !day.isToday && 'bg-gray-900'
                   )}
                 >
-                  {/* {day.date.split('-').pop().replace(/^0/, '')} */}
+                  {day.date.split('-').pop().replace(/^0/, '')}
                 </time>
               </button>
             ))}
@@ -218,6 +229,20 @@ export function Calendar2() {
                     <div className="py-1">
                       <Menu.Item>
                         {({ active }) => (
+                          <button
+                            className={classNames(
+                              active
+                                ? 'bg-gray-100 text-gray-900'
+                                : 'text-gray-700',
+                              'block px-4 py-2 text-sm'
+                            )}
+                          >
+                            Show Form
+                          </button>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
                           <a
                             href="#"
                             className={classNames(
@@ -242,7 +267,7 @@ export function Calendar2() {
                               'block px-4 py-2 text-sm'
                             )}
                           >
-                            Cancel
+                            Delete
                           </a>
                         )}
                       </Menu.Item>

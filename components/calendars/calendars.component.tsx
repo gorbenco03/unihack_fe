@@ -132,7 +132,7 @@ export function Calendar() {
                 )}
               >
                 <time dateTime={day.date}>
-                  {/* {day.date.split('-').pop().replace(/^0/, '')} */}
+                  {day.date.split('-').pop().replace(/^0/, '')}
                 </time>
               </button>
             </div>

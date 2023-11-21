@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { Column, Container } from '../../components/grid';
 import { Header } from '../header/header.section';
 import Dropdown from '../../components/dropdown/dropdown.component';
 import Link from 'next/link';
-function Hero() {
+function Hero({ children }: { children: ReactNode }) {
   return (
     <div>
       <div className="relative isolate px-6 pt-14 lg:px-8">
@@ -19,6 +19,7 @@ function Hero() {
             }}
           />
         </div>
+        {children}
         <div
           className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
           aria-hidden="true"

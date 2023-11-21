@@ -54,7 +54,8 @@ const people = [
     name: 'Tom Cook',
     email: 'tom.cook@example.com',
     role: 'Director of Product',
-    imageUrl: '',
+    imageUrl:
+      'https://cdn.outsideonline.com/wp-content/uploads/2020/12/07/tim-cook-apple_s.jpg',
     href: '#',
     lastSeen: null,
   },

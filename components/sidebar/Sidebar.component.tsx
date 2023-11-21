@@ -20,9 +20,14 @@ import { Calendar2 } from '../calendar2/calendar2';
 import Link from 'next/link';
 
 const navigation = [
-  { name: 'Dashboard', href: 'dashboard', icon: HomeIcon, current: true },
-  { name: 'Documents', href: '#', icon: DocumentDuplicateIcon, current: false },
-  { name: 'Reports', href: '#', icon: ChartPieIcon, current: false },
+  { name: 'Dashboard', href: 'dashboard', icon: HomeIcon, current: false },
+  {
+    name: 'Documents',
+    href: 'documents',
+    icon: DocumentDuplicateIcon,
+    current: false,
+  },
+  { name: 'Balance', href: 'balance', icon: ChartPieIcon, current: false },
 ];
 
 const userNavigation = [
@@ -34,7 +39,13 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
-export function Sidebar({ children }: { children: ReactNode }) {
+export function Sidebar({
+  children,
+  currentPage,
+}: {
+  children: ReactNode;
+  currentPage: string;
+}) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
@@ -110,7 +121,7 @@ export function Sidebar({ children }: { children: ReactNode }) {
                                 <a
                                   href={item.href}
                                   className={classNames(
-                                    item.current
+                                    currentPage === item.href
                                       ? 'bg-gray-50 text-indigo-600'
                                       : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50',
                                     'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
@@ -173,8 +184,8 @@ export function Sidebar({ children }: { children: ReactNode }) {
                         <a
                           href={item.href}
                           className={classNames(
-                            item.current
-                              ? 'bg-gray-50 text-indigo-600'
+                            currentPage === item.href
+                              ? 'bg-gray-100 text-black'
                               : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50',
                             'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
                           )}
@@ -183,7 +194,7 @@ export function Sidebar({ children }: { children: ReactNode }) {
                             className={classNames(
                               item.current
                                 ? 'text-indigo-600'
-                                : 'text-gray-400 group-hover:text-indigo-600',
+                                : 'text-black group-hover:text-black',
                               'h-6 w-6 shrink-0'
                             )}
                             aria-hidden="true"
@@ -201,7 +212,7 @@ export function Sidebar({ children }: { children: ReactNode }) {
                     className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-indigo-600"
                   >
                     <Cog6ToothIcon
-                      className="h-6 w-6 shrink-0 text-gray-400 group-hover:text-indigo-600"
+                      className="h-6 w-6 shrink-0 text-black group-hover:text-indigo-600"
                       aria-hidden="true"
                     />
                     Settings

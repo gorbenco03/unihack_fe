@@ -9,8 +9,9 @@ export function About() {
   return (
     <>
       <Header />
-      <Hero />
-      <Drpdwontxt />
+      <Hero>
+        <Drpdwontxt />
+      </Hero>
       <Stats />
       <Faqs />
       <Footer />
