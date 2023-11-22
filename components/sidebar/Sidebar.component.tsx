@@ -18,6 +18,7 @@ import {
 } from '@heroicons/react/20/solid';
 import { Calendar2 } from '../calendar2/calendar2';
 import Link from 'next/link';
+import React from 'react';
 
 const navigation = [
   { name: 'Dashboard', href: 'dashboard', icon: HomeIcon, current: false },

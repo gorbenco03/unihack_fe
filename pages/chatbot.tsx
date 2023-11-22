@@ -32,7 +32,7 @@ export default function Chatbot() {
       <Hero>
         {' '}
         <div className="w-full mt-10 p-10 flex items-center justify-center ">
-          <div className="bg-white shadow-lg  rounded-lg max-w-md">
+          <div className="bg-[#F4F9F9] shadow-lg  rounded-lg max-w-md">
             <div className="border-b-2 px-2 py-4">
               <div className="inline-flex items-center">
                 <h2 className="ml-8">Asistenta Virtuala</h2>
@@ -40,7 +40,7 @@ export default function Chatbot() {
             </div>
             <div className="h-80 flex flex-col space-y-4 max-w-md px-2 mb-2 mt-2 ">
               <div className="flex flex-col items-start">
-                <span className="bg-blue-500 px-2 py-4 rounded-b-xl mt-2 mb-2 rounded-tl-xl">
+                <span className="bg-[#CCF2F4] px-2 py-4 rounded-b-xl mt-2 mb-2 rounded-tl-xl">
                   Salut! Cum te pot ajuta? Descrie problema ta in 15-30 cuvinte
                   pentru a primi o recomandare.
                 </span>
@@ -53,20 +53,22 @@ export default function Chatbot() {
                   ariaLabel="comment-loading"
                   wrapperStyle={{
                     backgroundColor: 'white',
-                    color: '#fff',
+                    color: '# ',
                   }}
                   wrapperClass="comment-wrapper"
                 />
               ) : (
-                <span>{recommendation}</span>
+                <span className="bg-[#A4EBF3]  px-2 py-4 rounded-b-xl mt-2 mb-2 rounded-tr-xl">
+                  {recommendation}
+                </span>
               )}
             </div>
-            <div className="border-t-4  py-4 px-4">
+            <div className="border-t-4 b py-4 px-4">
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0"></div>
                 <div className="min-w-0 flex-1">
                   <form action="#">
-                    <div className="border-b border-gray-200 focus-within:border-indigo-600">
+                    <div className="border-b border-gray-200 ">
                       <label htmlFor="comment" className="sr-only">
                         Add your comment
                       </label>
@@ -78,7 +80,7 @@ export default function Chatbot() {
                         }}
                         name="comment"
                         id="comment"
-                        className="block w-full resize-none border-0 border-b border-transparent p-0 pb-2 text-gray-900 placeholder:text-gray-400 focus:border-indigo-600 focus:ring-0 sm:text-sm sm:leading-6"
+                        className="block w-full rounded-lg bg-[#AAAAAA] resize-none border-0 border-b border-transparent  pb-2 text-gray-900 placeholder:text-black p-4 focus:ring-0 sm:text-sm sm:leading-6"
                         placeholder="Add your comment..."
                         defaultValue={''}
                       />
