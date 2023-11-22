@@ -5,4 +5,4 @@ export default {
   title: 'Forms page section',
 } as Meta;
 
-export const FormsSection: Story = () => <Hero />;
+export const FormsSection: Story = () => <Hero hildren={undefined} />;
